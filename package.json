@@ -1,0 +1,33 @@
+{
+  "name": "@aeinbu/groupby",
+  "version": "0.0.0",
+  "description": "Helper functions for doing \"group by\" type transformations on collections using reducers",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aeinbu/groupby.git"
+  },
+  "keywords": [
+    "groupby",
+    "group by",
+    "grouping",
+    "dictionary",
+    "map"
+  ],
+  "author": "Arjan Einbu <arjan@einbu.no>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aeinbu/groupby/issues"
+  },
+  "homepage": "https://github.com/aeinbu/groupby#readme",
+  "devDependencies": {
+    "typescript": "^3.7.5"
+  }
+}

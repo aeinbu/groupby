@@ -3,11 +3,13 @@
   "version": "0.0.0",
   "description": "Helper functions for doing \"group by\" type transformations on collections using reducers",
   "main": "index.js",
+  "files": ["lib/**/*"],
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --config jestconfig.json",
+    "test-watch": "jest --config jestconfig.json --watch",
     "build": "tsc"
   },
   "repository": {
@@ -28,6 +30,9 @@
   },
   "homepage": "https://github.com/aeinbu/groupby#readme",
   "devDependencies": {
+    "@types/jest": "^25.1.2",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.2.0",
     "typescript": "^3.7.5"
   }
 }

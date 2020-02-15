@@ -15,3 +15,5 @@ yarn add @aeinbu/groupby
 ```javascript
 //TODO
 ```
+
+Also, look in the `tests` directory. The tests demonstrate at least a dosen different ways to use this library

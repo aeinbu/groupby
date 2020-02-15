@@ -2,12 +2,13 @@
     "compilerOptions": {
         "module": "commonjs",
         "lib": ["ES2015"],
+        "allowJs": true,
         "declaration": true,
         "removeComments": true,
         "preserveConstEnums": true,
         "strict": true,
         "sourceMap": true,
-        "baseUrl": "",
+        "baseUrl": ".",
         "outDir": "lib"
     },
     "include": ["src"],

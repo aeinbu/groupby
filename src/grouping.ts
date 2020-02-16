@@ -16,7 +16,7 @@ interface AggregateFn<TIn, TOut> {
  * @param {*} createGroup (curr: TIn) => returns an object for a new group based on curr
  * @param {*} aggregate (group: TOut, curr: TIn) => returns new to the group by adding curr to incoming group
  */
-const toGroups = <TIn, TOut>(
+export const toGroups = <TIn, TOut>(
 	predicate: PredicateFn<TIn, TOut>,
 	createGroup: GroupInitializerFn<TIn, TOut>,
 	aggregate: AggregateFn<TIn, TOut>

@@ -1,14 +1,8 @@
-interface PredicateFn<TIn, TOut> {
-	(curr: TIn): (group: TOut) => boolean
-}
+type PredicateFn<TIn, TOut> = (curr: TIn) => (group: TOut) => boolean
 
-interface GroupInitializerFn<TIn, TOut> {
-	(curr: TIn): TOut
-}
+type GroupInitializerFn<TIn, TOut> = (curr: TIn) => TOut
 
-interface AggregateFn<TIn, TOut> {
-	(group: TOut, curr: TIn): void
-}
+type AggregateFn<TIn, TOut> = (group: TOut, curr: TIn) => void
 
 
 /**
@@ -17,32 +11,30 @@ interface AggregateFn<TIn, TOut> {
  * @param {*} aggregate (group: TOut, curr: TIn) => returns new to the group by adding curr to incoming group
  */
 const toGroups = <TIn, TOut>(
-	predicate: PredicateFn<TIn, TOut>,
-	createGroup: GroupInitializerFn<TIn, TOut>,
-	aggregate: AggregateFn<TIn, TOut>
+    predicate: PredicateFn<TIn, TOut>,
+    createGroup: GroupInitializerFn<TIn, TOut>,
+    aggregate: AggregateFn<TIn, TOut>
 ) => (
-	agg: (TOut)[],
-	curr: TIn
-) => {
-    agg = agg || [];
-    const ix = agg.findIndex(predicate(curr)); // Find existing group
-    const group = ix === -1 ? createGroup(curr) : agg[ix]; // ... or create new
+        agg: (TOut)[],
+        curr: TIn
+    ) => {
+        agg = agg || []
+        const ix = agg.findIndex(predicate(curr)) // Find existing group
+        const group = ix === -1 ? createGroup(curr) : agg[ix] // ... or create new
 
-	aggregate(group, curr); // Add curr to the collection for the group
+        aggregate(group, curr) // Add curr to the collection for the group
 
-    if (ix === -1) {
-        agg.push(group); // Add new group
-    } else {
-        agg[ix] = group; // ...or replace existing group
+        if (ix === -1) {
+            agg.push(group) // Add new group
+        } else {
+            agg[ix] = group // ...or replace existing group
+        }
+
+        return agg
     }
 
-    return agg;
-}
 
-
-interface SelectorFn<TIn, TOut> {
-    (obj:TIn): TOut
-}
+type SelectorFn<TIn, TOut> = (obj: TIn) => TOut
 
 /**
  * Group by simple property. This method is meant to be used with collection reducers.
@@ -52,22 +44,22 @@ interface SelectorFn<TIn, TOut> {
  * @returns array of grouping objects in the shape of `{ key: ..., values: [...]}`
  */
 export const groupBy = <TIn, K, V>(
-	keySelector: SelectorFn<TIn, K>,
-	valueSelector: SelectorFn<TIn, V> = obj => (obj as unknown as V)
+    keySelector: SelectorFn<TIn, K>,
+    valueSelector: SelectorFn<TIn, V> = obj => (obj as unknown as V)
 ) => {
-    if (typeof keySelector !== "function" || typeof valueSelector !== "function") {
-        throw new Error("Invalid argment(s) for groupBy");
+    if (typeof keySelector !== 'function' || typeof valueSelector !== 'function') {
+        throw new Error('Invalid argment(s) for groupBy')
     }
 
-	type TOut = {key: K, values: V[]}
-    const predicate = (curr: TIn) => (group: TOut) => group.key === keySelector(curr);
+    type TOut = { key: K, values: V[] }
+    const predicate = (curr: TIn) => (group: TOut) => group.key === keySelector(curr)
 
     const createGroup = (curr: TIn) => ({
-        key: keySelector(curr),
-        values: [] as V[]
-    });
+    	key: keySelector(curr),
+    	values: [] as V[]
+    })
 
-    const aggregate = (group: TOut, curr: TIn) => group.values.push(valueSelector(curr));
+    const aggregate = (group: TOut, curr: TIn) => group.values.push(valueSelector(curr))
 
-    return toGroups(predicate, createGroup, aggregate);
-};
+    return toGroups(predicate, createGroup, aggregate)
+}

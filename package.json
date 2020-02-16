@@ -2,15 +2,22 @@
   "name": "@aeinbu/groupby",
   "version": "0.0.0",
   "description": "Helper functions for doing \"group by\" type transformations on collections using reducers",
-  "main": "index.js",
-  "files": ["lib/**/*"],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
   "directories": {
     "test": "tests"
   },
   "scripts": {
     "test": "jest --config jestconfig.json",
     "test-watch": "jest --config jestconfig.json --watch",
-    "build": "tsc"
+    "build": "tsc",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test",
+    "postversion": "git push --tags",
+    "lint-autofix": "eslint --fix src/**/* tests/**/*"
   },
   "repository": {
     "type": "git",
@@ -31,6 +38,14 @@
   "homepage": "https://github.com/aeinbu/groupby#readme",
   "devDependencies": {
     "@types/jest": "^25.1.2",
+    "@typescript-eslint/eslint-plugin": "^2.19.2",
+    "@typescript-eslint/parser": "^2.19.2",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
     "jest": "^25.1.0",
     "ts-jest": "^25.2.0",
     "typescript": "^3.7.5"

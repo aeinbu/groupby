@@ -1,7 +1,4 @@
-interface SelectorFn<T> {
-    (obj:any): T
-}
-
+type SelectorFn<T> = (obj:any) => T
 
 /**
  * Turns an array of objects into a an object
@@ -16,8 +13,8 @@ export const toDictionary = (
     curr: any
 ) => {
     const key = keySelector(curr)
-    if(typeof key !== "string" && typeof key !== "number") {
-        throw new Error("Invalid keySelector in toDictionary: Running keySelector on an object in the input collection collection produced an invalid key")
+    if(typeof key !== 'string' && typeof key !== 'number') {
+        throw new Error('Invalid keySelector in toDictionary: Running keySelector on an object in the input collection collection produced an invalid key')
     }
 
     agg[key] = valueSelector(curr)
@@ -34,12 +31,12 @@ export const toMap = <K, V>(
     keySelector : SelectorFn<any> = obj => obj.key,
     valueSelector: SelectorFn<any> = obj => obj.values
 ) => (
-    agg: Map<K, V>,
-    curr: any
-) => {
-    agg.set(keySelector(curr), valueSelector(curr))
-    return agg
-}
+        agg: Map<K, V>,
+        curr: any
+    ) => {
+        agg.set(keySelector(curr), valueSelector(curr))
+        return agg
+    }
 
 
 // /**

@@ -1,0 +1,30 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": [
+    "standard"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "no-multiple-empty-lines": ["error", {"max": 3, "maxBOF": 0, "maxEOF": 1}],
+    "semi": ["error", "never"],
+    "quotes": "warn",
+    "indent": ["warn", 4],
+    "keyword-spacing": "off"
+  }
+}

@@ -15,8 +15,7 @@
     "test-watch": "jest --config jestconfig.json --watch",
     "build": "tsc",
     "prepare": "npm run build",
-    "prepublishOnly": "npm test",
-    "postversion": "git push --tags",
+    "version" : "git add package.json",
     "lint-autofix": "eslint --fix src/**/* tests/**/*"
   },
   "repository": {

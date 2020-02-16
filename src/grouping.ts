@@ -55,8 +55,8 @@ export const groupBy = <TIn, K, V>(
     const predicate = (curr: TIn) => (group: TOut) => group.key === keySelector(curr)
 
     const createGroup = (curr: TIn) => ({
-    	key: keySelector(curr),
-    	values: [] as V[]
+        key: keySelector(curr),
+        values: [] as V[]
     })
 
     const aggregate = (group: TOut, curr: TIn) => group.values.push(valueSelector(curr))

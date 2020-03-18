@@ -1,6 +1,6 @@
 # @aeinbu/groupby
 
-Lightweight and non-intrusive functions for doing \"group by\" type transformations on collections using reducers
+Lightweight and non-intrusive functions for doing \"group by\" and \"distinct\" (aka. \"unique\") transformations on collections using reducers
 
 - The functions are lightweight, as they are small and don't make you bring along lots of functions you don't need.
 - The functions are flexible since you can choose how to best represent your grouped data

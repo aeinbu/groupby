@@ -24,7 +24,7 @@
     "no-multiple-empty-lines": ["error", {"max": 3, "maxBOF": 0, "maxEOF": 1}],
     "semi": ["error", "never"],
     "quotes": "warn",
-    "indent": ["warn", 4],
+    "indent": ["info", 4],
     "keyword-spacing": "off"
   }
 }

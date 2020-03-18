@@ -1,3 +1,5 @@
+import { isDeepEqual } from "./deepCompare"
+
 type PredicateFn<TIn, TOut> = (curr: TIn) => (group: TOut) => boolean
 
 type GroupInitializerFn<TIn, TOut> = (curr: TIn) => TOut
@@ -15,9 +17,9 @@ const toGroups = <TIn, TOut>(
     createGroup: GroupInitializerFn<TIn, TOut>,
     aggregate: AggregateFn<TIn, TOut>
 ) => (
-        agg: (TOut)[],
-        curr: TIn
-    ) => {
+    agg: (TOut)[],
+    curr: TIn
+) => {
         agg = agg || []
         const ix = agg.findIndex(predicate(curr)) // Find existing group
         const group = ix === -1 ? createGroup(curr) : agg[ix] // ... or create new
@@ -62,4 +64,31 @@ export const groupBy = <TIn, K, V>(
     const aggregate = (group: TOut, curr: TIn) => group.values.push(valueSelector(curr))
 
     return toGroups(predicate, createGroup, aggregate)
+}
+
+
+const noop = () => { }
+
+/**
+ * Returns only the distinct (unique) items in the collection
+ */
+export const distinct = <T>() => distinctBy((left: T, right: T) => isDeepEqual(left, right))
+
+
+type CompareFn<T> = (left: T, right: T) => boolean
+
+/**
+ * Returns only the distinct (unique) items in the collection
+ * This is to be used on arrays of numbers or strings. For grouping on complex objects please use `distinctBy` reducer instead
+ * @param compare
+ */
+export const distinctBy = <T>(
+    compare: CompareFn<T>
+) => {
+    const selector = (x: T) => x
+    const predicate = (curr: T) => (group: T) => compare(group, curr)
+
+    const createGroup = (curr: T) => selector(curr)
+
+    return toGroups(predicate, createGroup, noop)
 }

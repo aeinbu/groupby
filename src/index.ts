@@ -1,2 +1,2 @@
 export { toMap, toDictionary } from './dictionaries'
-export { groupBy } from './grouping'
+export { groupBy, distinct } from './grouping'

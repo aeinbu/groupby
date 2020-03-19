@@ -1,5 +1,5 @@
 import { distinctBy } from '../src/grouping'
-import { isDeepEqual } from '../src/deepCompare'
+import { isDeepEqual } from '../src/isDeepEqual'
 const { arrayContaining } = expect
 
 

@@ -1,4 +1,4 @@
-import { isDeepEqual } from "./deepCompare"
+import { isDeepEqual } from "./isDeepEqual"
 
 type PredicateFn<TIn, TOut> = (curr: TIn) => (group: TOut) => boolean
 
@@ -54,7 +54,7 @@ export const groupBy = <TIn, K, V>(
     }
 
     type TOut = { key: K, values: V[] }
-    const predicate = (curr: TIn) => (group: TOut) => group.key === keySelector(curr)
+    const predicate = (curr: TIn) => (group: TOut) => isDeepEqual(group.key, keySelector(curr))
 
     const createGroup = (curr: TIn) => ({
         key: keySelector(curr),

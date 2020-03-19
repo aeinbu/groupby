@@ -1,4 +1,4 @@
-import { isDeepEqual } from "../src/deepCompare"
+import { isDeepEqual } from "../src/isDeepEqual"
 
 describe("Comparing simple types", () => {
 

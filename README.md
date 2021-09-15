@@ -46,9 +46,9 @@ const resultsAsArray = people.reduce(
 )
 // Result (Note how the output is a new array):
 // [
-//     [{"key": "Rome", values: ["Tony", "Mary", "Peter"]},
-//     [{"key: "London", values: ["Peter", "Elisabeth"]},
-//     [{"key: "Paris", values: ["Francois"]}
+//     {"key": "Rome", values: ["Tony", "Mary", "Peter"]},
+//     {"key: "London", values: ["Peter", "Elisabeth"]},
+//     {"key: "Paris", values: ["Francois"]}
 // ]
 
 const resultsAsDictionary = resultsAsArray.reduce(

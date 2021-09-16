@@ -86,7 +86,7 @@ describe("Comparisson of nulls and undefineds", () => {
     })
 
 
-    test("Comparing null to anything not undefined should return false", () => {
+    test("Comparing null to anything not null should return false", () => {
         const left = null
         const right = 42
 

@@ -1,7 +1,7 @@
 # groupBy
 
 ```javascript
-import { groupBy, toDictionary } from "@aeinbu/groupBy"
+import { groupBy, toDictionary } from "@aeinbu/groupby"
 
 const people = [
     { name: "Tony", residence: "Rome" },

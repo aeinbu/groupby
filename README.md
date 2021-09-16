@@ -25,7 +25,7 @@ yarn add @aeinbu/groupby
 
 ## How to use
 ```javascript
-import { groupBy, toDictionary } from "@aeinbu/groupBy"
+import { groupBy, toDictionary } from "@aeinbu/groupby"
 
 const people = [
     {name: "Tony", residence: "Rome"},
@@ -69,7 +69,7 @@ const resultsAsDictionary = resultsAsArray.reduce(
 
 Since the reduction from `groupBy` is an array, the above two transforms can be chained and shortened (using a default parameter in toDictionary), like this:
 ```javascript
-import { groupBy, toDictionary } from "@aeinbu/groupBy"
+import { groupBy, toDictionary } from "@aeinbu/groupby"
 
 //...
 
@@ -87,7 +87,7 @@ const chainedResults = people
 
 There is also a `toMap` reducer, so you can create a ES2015 `Map` instead of an ordinary object:
 ```javascript
-import { groupBy, toMap } from "@aeinbu/groupBy"
+import { groupBy, toMap } from "@aeinbu/groupby"
 
 //...
 

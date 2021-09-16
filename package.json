@@ -1,7 +1,7 @@
 {
   "name": "@aeinbu/groupby",
   "version": "0.0.0",
-  "description": "Lighweight and non-intrusive functions for doing \"group by\" type transformations on collections using reducers",
+  "description": "Lightweight and non-intrusive functions for doing \"group by\" type transformations on collections using reducers",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [

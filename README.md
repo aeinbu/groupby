@@ -23,9 +23,9 @@ npm install @aeinbu/groupby
 yarn add @aeinbu/groupby
 ```
 
-## How to use
+## Quickstart
 ```javascript
-import { groupBy, toDictionary } from "@aeinbu/groupby"
+import { groupBy, toMap } from "@aeinbu/groupby"
 
 const people = [
     {name: "Tony", residence: "Rome"},
@@ -36,64 +36,10 @@ const people = [
     {name: "Francois", residence: "Paris"}
 ]
 
-const resultsAsArray = people.reduce(
-    groupBy(
-        x => x.residence,  // First lambda is used to extraxt the key values, so this will group by the residence
-        x => x.name        // Second lambda to determine object values to put in the groups, so in this example the group will contain all names for people in a residence city
-        // This paramter is optional, and if it is skipped, the whole item is selected as the value
-    ),
-    []
-)
-// Result (Note how the output is a new array):
-// [
-//     {"key": "Rome", values: ["Tony", "Mary", "Peter"]},
-//     {"key: "London", values: ["Peter", "Elisabeth"]},
-//     {"key: "Paris", values: ["Francois"]}
-// ]
-
-const resultsAsDictionary = resultsAsArray.reduce(
-    toDictionary(
-        x => x.name,   // First lambda to determine the property name
-        x => x.values  // Second lambda to determine where to find the value to set that property to
-        // This paramter is optional, an if omitted it will default to `x => x.values´ which would match the default output of `groupBy` above
-    ),
-    {}
-)
-// Result (See how the array is transformed to an object with properties for each key):
-// {
-//     "Rome": ["Tony", "Mary", "Peter"],
-//     "London": ["Peter", "Elisabeth"],
-//     "Paris": ["Francois"]
-// }
-```
-
-Since the reduction from `groupBy` is an array, the above two transforms can be chained and shortened (using a default parameter in toDictionary), like this:
-```javascript
-import { groupBy, toDictionary } from "@aeinbu/groupby"
-
-//...
-
-const chainedResults = people
-    .reduce(groupBy(x => x.name, x => x.residence), [])
-    .reduce(toDictionary(x => x.name), {})
-// With the same results as above:
-// {
-//     "Rome": ["Tony", "Mary", "Peter"],
-//     "London": ["Peter", "Elisabeth"],
-//     "Paris": ["Francois"]
-// }
-```
-
-
-There is also a `toMap` reducer, so you can create a ES2015 `Map` instead of an ordinary object:
-```javascript
-import { groupBy, toMap } from "@aeinbu/groupby"
-
-//...
-
-const chainedResults = people
+const results = people
     .reduce(groupBy(x => x.name, x => x.residence), [])
     .reduce(toMap(x => x.name), new Map())
+
 // With the same results as above:
 // {
 //     "Rome": ["Tony", "Mary", "Peter"],
@@ -102,7 +48,16 @@ const chainedResults = people
 // }
 ```
 
-Also, look in the `tests` directory for more examples. The tests demonstrate at least another dosen different ways to use this library
+## Documentation
+For more documentation, follow these links:
+- [groupBy](./docs/groupBy.md)
+- [distinct](./docs/distinct.md)
+- [distinctBy](./docs/distinctBy.md)
+- [toMap](./docs/toMap.md)
+- [toDictionary](./docs/toDictionary.md)
+- [isDeepEqual](./docs/isDeepEqual.md)
+
+Also, look in the `tests` directory for more examples. The tests demonstrate at least another dozen different ways to use this library
 
 ## Semantic versioning
 This package follows semantic versioning (See [semver.org](https://semver.org) for more info)

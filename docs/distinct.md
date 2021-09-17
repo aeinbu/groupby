@@ -1,4 +1,10 @@
 # distinct
+**Syntax**:  
+`distinct()`
+
+**Arguments**:  
+
+**Usage**:
 ```javascript
 //...
 ```

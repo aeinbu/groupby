@@ -1,4 +1,10 @@
 # toDictionary
+**Syntax**:  
+`toDictionary(keySelector, valueSelector)`
+
+**Arguments**:  
+
+**Usage**:
 ```javascript
 const cityArray = [
     { key: "Rome", values: ["Tony", "Mary", "Peter"] },
@@ -25,4 +31,4 @@ const cityDictionary = cityArray.reduce(
 
 See also:
 - [unit tests for toDictionary](../tests/toDictionary.tests.ts)
-- [additional javascript unit tests for toDictionary](../tests/toDictionary.assertions.tests.ts)
+- [additional javascript specific unit tests for toDictionary](../tests/toDictionary.assertions.tests.ts)

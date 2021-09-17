@@ -1,4 +1,10 @@
 # toMap
+**Syntax**:  
+`toMap(keySelector, valueSelector)`
+
+**Arguments**:  
+
+**Usage**:
 ```javascript
 const cityArray = [
     { key: "Rome", values: ["Tony", "Mary", "Peter"] },
@@ -20,7 +26,8 @@ const cityDictionary = cityArray.reduce(
 //     "Rome": ["Tony", "Mary", "Peter"],
 //     "London": ["Peter", "Elisabeth"],
 //     "Paris": ["Francois"]
-// }```
+// }
+```
 
 See also:
 - [unit tests for toMap](../tests/toMap.tests.ts)

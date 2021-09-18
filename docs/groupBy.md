@@ -1,4 +1,5 @@
 # groupBy
+Used to group a collection of objects by a given property or set of properties.
 
 **Syntax**:  
 `groupBy(keySelector, valueSelector)`
@@ -52,6 +53,6 @@ results.get("Rome") // ["Tony", "Mary", "Peter"]
 ```
 
 **See also**:
-- [toMap](./docs/toMap.md)
-- [toDictionary](./docs/toDictionary.md)
+- [toMap](./toMap.md)
+- [toDictionary](./toDictionary.md)
 - [unit tests for groupBy](../tests/groupBy.tests.ts)

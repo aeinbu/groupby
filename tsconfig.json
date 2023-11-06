@@ -10,7 +10,7 @@
         "sourceMap": true,
         "baseUrl": ".",
         "outDir": "dist",
-        "sourceRoot": "dist"
+        "sourceRoot": "/dist"
     },
     "include": ["src"],
     "exclude": ["node_modules", "tests"]

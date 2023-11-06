@@ -2,10 +2,10 @@
   "name": "@aeinbu/groupby",
   "version": "0.0.0",
   "description": "Lightweight and non-intrusive functions for doing \"group by\" type transformations on collections using reducers",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "lib/**/*"
+    "dist/**/*"
   ],
   "directories": {
     "test": "tests"

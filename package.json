@@ -23,11 +23,13 @@
     "url": "git+https://github.com/aeinbu/groupby.git"
   },
   "keywords": [
-    "groupby",
-    "group by",
+    "groupby", "group by",
     "grouping",
     "dictionary",
-    "map"
+    "map",
+    "minby", "min by",
+    "maxby", "max by",
+    "sumby", "sum by"
   ],
   "author": "Arjan Einbu <arjan@einbu.no>",
   "license": "MIT",
@@ -37,14 +39,6 @@
   "homepage": "https://github.com/aeinbu/groupby#readme",
   "devDependencies": {
     "@types/jest": "^27.0.1",
-    "@typescript-eslint/eslint-plugin": "^4.31.1",
-    "@typescript-eslint/parser": "^4.31.1",
-    "eslint": "^7.32.0",
-    "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-import": "^2.24.2",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.1.0",
-    "eslint-plugin-standard": "^5.0.0",
     "jest": "^27.2.0",
     "ts-jest": "^27.0.5",
     "typescript": "^4.4.3"

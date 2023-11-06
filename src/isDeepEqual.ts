@@ -4,7 +4,7 @@
  * @param left
  * @param right
  */
-export function isDeepEqual<T>(left: T, right: T) {
+export function isDeepEqual<T>(left: T , right: T) {
     if(left === right) return true
     
     if (typeof left !== typeof right)
@@ -19,7 +19,7 @@ export function isDeepEqual<T>(left: T, right: T) {
     if (Object.getPrototypeOf(left) !== Object.getPrototypeOf(right))
         return false
 
-    if (Object.keys(left).length !== Object.keys(right).length)
+    if (Object.keys(left as object).length !== Object.keys(right as object).length)
         return false
 
     for (var key in left) {

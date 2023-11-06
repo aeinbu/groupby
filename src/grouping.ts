@@ -1,3 +1,4 @@
+import { SelectorFn } from "./types"
 import { isDeepEqual } from "./isDeepEqual"
 
 type PredicateFn<TIn, TOut> = (curr: TIn) => (group: TOut) => boolean
@@ -34,9 +35,6 @@ const toGroups = <TIn, TOut>(
 
         return agg
     }
-
-
-type SelectorFn<TIn, TOut> = (obj: TIn) => TOut
 
 /**
  * Group by simple property. This method is meant to be used with collection reducers.

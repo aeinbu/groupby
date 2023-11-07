@@ -6,7 +6,9 @@ For simple types or doing a deep equals on complex types, use
 [distinct](./distinct.md) instead.
 
 **Syntax**:  
-`distinctBy(compareFn)`
+`distinctBy(compareFn)`  
+Usage in a reducer:  
+`array.reduce(distinctBy(compareFn))`
 
 **Arguments**:  
 - `compareFn` is a used to determine whether two elements are equal.  

@@ -2,7 +2,9 @@
 Used to group a collection of objects by a given property or set of properties.
 
 **Syntax**:  
-`groupBy(keySelector, valueSelector)`
+`groupBy(keySelector, valueSelector)`  
+Usage in a reducer:  
+`array.reduce(groupBy(keySelector, valueSelector))`
 
 **Arguments**:  
 - `keySelector` is a function used to extraxt the key values.  

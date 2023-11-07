@@ -2,11 +2,13 @@
 Used to create a new collection with the distinct values. It compares each item using
 a deep compare algorithm witch compares all property values seperatly.
 
-If you med to
-compare using a custom comparator, use [distinctBy](./distinctBy.md) instead.
+If you need to compare using a custom comparator, use
+[distinctBy](./distinctBy.md) instead.
 
 **Syntax**:  
-`distinct()`
+`distinct()`  
+Usage in a reducer:  
+`array.reduce(distinct())`
 
 **Arguments**:  
 *None*

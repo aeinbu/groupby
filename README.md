@@ -51,11 +51,13 @@ const results = people
 ## Documentation
 For more documentation, follow these links:
 - [groupBy](./docs/groupBy.md)
-- [distinct](./docs/distinct.md)
-- [distinctBy](./docs/distinctBy.md)
+- [distinctBy](./docs/distinctBy.md) and [distinct](./docs/distinct.md)
 - [toMap](./docs/toMap.md)
 - [toDictionary](./docs/toDictionary.md)
 - [isDeepEqual](./docs/isDeepEqual.md)
+- [min](./docs/min.md) for `minBy`, `minOf` and `min`
+- [max](./docs/max.md) for `maxBy`, `maxOf` and `max`
+- [sum](./docs/sum.md) for `sumOf` and `sum`
 
 Also, look in the `tests` directory for more examples. The tests demonstrate at least another dozen different ways to use this library
 

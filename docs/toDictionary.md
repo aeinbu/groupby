@@ -1,6 +1,8 @@
-# toMap
+# toDictionary
 **Syntax**:  
-`toMap(keySelector, valueSelector)`
+`toDictionary(keySelector, valueSelector)`  
+Usage in a reducer:  
+`array.reduce(toDictionary(keySelector, valueSelector))`
 
 **Arguments**:  
 - `keySelector` is a function used to extraxt the key values.  

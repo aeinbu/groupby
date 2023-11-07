@@ -1,7 +1,25 @@
-import { minOf, min } from "../src/max-min"
+import { minBy, minOf, min } from "../src/max-min"
+const { objectContaining } = expect;
 
 
 describe('minBy', () => {
+
+    test('Minimum value of a property in an array of objects', () => {
+        const testData = [
+            { aValue: 1 },
+            { aValue: 2 },
+            { aValue: 3 }
+        ]
+
+        const res = testData.reduce(minOf(x => x.aValue), null)
+
+        expect(res).toEqual(objectContaining({ aValue: 1 }))
+    })
+
+})
+
+
+describe('minOf', () => {
 
     test('Minimum value of a property in an array of objects', () => {
         const testData = [

@@ -11,7 +11,7 @@ describe('minBy', () => {
             { aValue: 3 }
         ]
 
-        const res = testData.reduce(minOf(x => x.aValue), null)
+        const res = testData.reduce(minBy(x => x.aValue), null)
 
         expect(res).toEqual(objectContaining({ aValue: 1 }))
     })

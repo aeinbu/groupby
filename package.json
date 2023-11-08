@@ -26,10 +26,7 @@
     "groupby", "group by",
     "grouping",
     "dictionary",
-    "map",
-    "minof", "min of",
-    "maxof", "max of",
-    "sumof", "sum of"
+    "map"
   ],
   "author": "Arjan Einbu <arjan@einbu.no>",
   "license": "MIT",

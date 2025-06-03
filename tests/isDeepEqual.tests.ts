@@ -14,11 +14,11 @@ describe("Comparing simple types", () => {
 
     test("Comparing different numbers should return false", () => {
         const left = 10
-        const right = 10
+        const right = 20
 
         const res = isDeepEqual(left, right)
 
-        expect(res).toBe(true)
+        expect(res).toBe(false)
     })
 
 

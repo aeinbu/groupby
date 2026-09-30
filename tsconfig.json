@@ -9,7 +9,7 @@
         "preserveConstEnums": true,
         "strict": true,
         "sourceMap": true,
-        "baseUrl": ".",
+        "rootDir": "src",
         "outDir": "dist"
     },
     "include": ["src"],
